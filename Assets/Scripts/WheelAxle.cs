@@ -32,6 +32,9 @@ public class WheelAxle // Физика колесной оси
 
     //Public API
 
+    public bool IsMotor => isMotor;
+    public bool IsSteer => isSteer;
+
     public void Update()
     {
         UpdateWheelHits();

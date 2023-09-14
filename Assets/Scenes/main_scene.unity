@@ -158,6 +158,7 @@ Transform:
   - {fileID: 1701985905}
   - {fileID: 748336451}
   - {fileID: 1000161002}
+  - {fileID: 1250860620}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -74.784, z: 0}
@@ -173,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cd70417de5d5c4b9ad926adbd3e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMotorTorque: 1500
-  maxBrakeTorque: 5000
+  maxMotorTorque: 8000
+  maxBrakeTorque: 50000
   maxSteerAngle: 50
   chassis: {fileID: 74516078}
   ThrottleControl: 0
@@ -218,9 +219,9 @@ MonoBehaviour:
     wheelWidth: 6.44
     antiRollForce: 70000
     baseForwardStiffness: 1.5
-    stabilityForwardFactor: 1
-    baseSidewaysStiffness: 2
-    stabilitySidewaysFactor: 1
+    stabilityForwardFactor: 1.5
+    baseSidewaysStiffness: 1.75
+    stabilitySidewaysFactor: 4
     additionalWheelDownForce: 100
   - leftWheelCollider: {fileID: 1683419053}
     rightWheelCollider: {fileID: 496986625}
@@ -231,11 +232,18 @@ MonoBehaviour:
     wheelWidth: 6.44
     antiRollForce: 70000
     baseForwardStiffness: 1.5
-    stabilityForwardFactor: 1
-    baseSidewaysStiffness: 2
-    stabilitySidewaysFactor: 1
+    stabilityForwardFactor: 1.5
+    baseSidewaysStiffness: 1.75
+    stabilitySidewaysFactor: 4
     additionalWheelDownForce: 100
   wheelBaseLength: 7
+  centerOfMass: {fileID: 1250860620}
+  angularDragMin: 0.3
+  angularDragMax: 3
+  angularDragFactor: 0.05
+  downForceMin: 50
+  downForceMax: 200
+  downForceFactor: 0.1
   MotorTorque: 0
   SteerAngle: 0
   BrakeTorque: 0
@@ -826,6 +834,37 @@ Transform:
   - {fileID: 496517506}
   m_Father: {fileID: 74516074}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1250860619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250860620}
+  m_Layer: 0
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250860620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250860619}
+  m_LocalRotation: {x: -0, y: 0.6072679, z: -0, w: 0.79449713}
+  m_LocalPosition: {x: -0.86, y: -0.35, z: 4.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 74516074}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373779135
 GameObject:
