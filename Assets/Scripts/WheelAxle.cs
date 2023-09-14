@@ -35,6 +35,16 @@ public class WheelAxle // Физика колесной оси
     public bool IsMotor => isMotor;
     public bool IsSteer => isSteer;
 
+    public float GetAverageRpm() // возвращает количество оборотов колесной оси
+    {
+        return (leftWheelCollider.rpm + rightWheelCollider.rpm) * 0.5f;
+    }
+
+    public float GetRadius()
+    {
+        return leftWheelCollider.radius;
+    }
+
     public void Update()
     {
         UpdateWheelHits();
@@ -49,6 +59,8 @@ public class WheelAxle // Физика колесной оси
     {
         leftWheelCollider.GetGroundHit(out leftWheelHit);
         rightWheelCollider.GetGroundHit(out rightWheelHit);
+
+        Debug.Log("UpdateWheelHits");
     }
 
     private void CorrectStiffness() // общая сила трения, проскальзывание колеса
@@ -71,6 +83,8 @@ public class WheelAxle // Физика колесной оси
         rightWheelCollider.forwardFriction = rightForward;
         leftWheelCollider.sidewaysFriction = leftSideways;
         rightWheelCollider.sidewaysFriction = rightSideways;
+
+        Debug.Log("CorrectStiffness");
     }
 
     private void ApplyDownForce() // прижимная сила для колес
@@ -83,11 +97,15 @@ public class WheelAxle // Физика колесной оси
         if (rightWheelCollider.isGrounded == true)
             rightWheelCollider.attachedRigidbody.AddForceAtPosition
                 (rightWheelHit.normal * -additionalWheelDownForce * rightWheelCollider.attachedRigidbody.velocity.magnitude,
-                rightWheelCollider.transform.position); 
+                rightWheelCollider.transform.position);
+
+        Debug.Log("ApplyDownForce");
     }
 
     private void ApplyAntiRoll() // стабилизатор поперечной устойчивости
     {
+        Debug.Log("ApplyAntiroll");
+
         float travelL = 1.0f;
         float travelR = 1.0f;
 
@@ -123,26 +141,29 @@ public class WheelAxle // Физика колесной оси
 
     public void ApplySteerAngle(float steerAngle, float wheelBaseLength) // угол поворота // угол Аккермана
     {
+
+        Debug.Log("ApplySteerAngle");
+
         if (isSteer == false) return;
 
         float radius = Mathf.Abs(wheelBaseLength * Mathf.Tan(Mathf.Deg2Rad * (90 - Mathf.Abs(steerAngle))));
         float angleSign = Mathf.Sign(steerAngle);
 
-        Debug.Log("radius " + radius);
+        
 
         if(steerAngle > 0)
         {
             leftWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius + (wheelWidth * 0.5f))) * angleSign;
             rightWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius - (wheelWidth * 0.5f))) * angleSign;
 
-            Debug.Log("steerAngle > 0" + steerAngle);
+            
         }
         else if(steerAngle < 0)
         {
             leftWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius - (wheelWidth * 0.5f))) * angleSign;
             rightWheelCollider.steerAngle = Mathf.Rad2Deg * Mathf.Atan(wheelBaseLength / (radius + (wheelWidth * 0.5f))) * angleSign;
 
-            Debug.Log("steerAngle < 0" + steerAngle);
+            
 
         }
         else
@@ -150,20 +171,25 @@ public class WheelAxle // Физика колесной оси
             leftWheelCollider.steerAngle = 0;
             rightWheelCollider.steerAngle = 0;
 
-            Debug.Log("steerAngle = 0" + steerAngle);
+            
         }       
         
     }
 
     public void ApplyMotorTorque(float motorTorque) // крутящий момент
     {
+
+        Debug.Log("ApplyMotorTorque");
+
         if (isMotor == false) return;
         leftWheelCollider.motorTorque = motorTorque;
         rightWheelCollider.motorTorque = motorTorque;
     }
 
     public void ApplyBrakeTorque(float brakeTorque)
-    {        
+    {
+        Debug.Log("ApplyBrakeTorque");
+
         leftWheelCollider.brakeTorque = brakeTorque;
         rightWheelCollider.brakeTorque = brakeTorque;
     }
@@ -171,12 +197,18 @@ public class WheelAxle // Физика колесной оси
     //private
     private void SyncMeshTransform() // синхронизирует коллайдеры и трансформ
     {
+
+        Debug.Log("SyncMeshTransform");
+
         UpdateWheelTransform(leftWheelCollider, leftWheelMesh);
         UpdateWheelTransform(rightWheelCollider, rightWheelMesh);
     }
 
     private void UpdateWheelTransform(WheelCollider wheelCollider, Transform wheelTransform)
     {
+
+        Debug.Log("UpdateWheelTransform");
+
         Vector3 position;
         Quaternion rotation;
 

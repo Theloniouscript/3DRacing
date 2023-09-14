@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6812392531891805583}
+  - component: {fileID: 6812392531891805579}
   - component: {fileID: 6812392531891805577}
   - component: {fileID: 6812392531891805576}
-  - component: {fileID: 6812392531891805579}
   m_Layer: 0
   m_Name: Car_Prefab
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812392531891805580}
-  m_LocalRotation: {x: -0, y: 0.96752584, z: -0, w: -0.2527721}
+  m_LocalRotation: {x: 0, y: 0.9675264, z: -0, w: -0.25277025}
   m_LocalPosition: {x: 5.25, y: 7.57, z: 25.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -39,111 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 209.283, z: 0}
---- !u!114 &6812392531891805577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812392531891805580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8cd70417de5d5c4b9ad926adbd3e8e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxMotorTorque: 8000
-  maxBrakeTorque: 50000
-  maxSteerAngle: 50
-  engineTorqueCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 15000
-      inSlope: -39.611584
-      outSlope: -39.611584
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 18.624084
-      value: 14262.2705
-      inSlope: -95.270996
-      outSlope: -95.270996
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.037522633
-    - serializedVersion: 3
-      time: 29.333391
-      value: 12898.093
-      inSlope: -87.60708
-      outSlope: -87.60708
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 66.11689
-      value: 11627.611
-      inSlope: -75.54858
-      outSlope: -75.54858
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 112.01255
-      value: 11681.712
-      inSlope: -16.32269
-      outSlope: -16.32269
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 199.42792
-      value: 9526.686
-      inSlope: -45.75199
-      outSlope: -45.75199
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 320
-      value: 200
-      inSlope: -77.35361
-      outSlope: -77.35361
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  maxSpeed: 0
-  linearVelocity: 0
-  ThrottleControl: 0
-  SteerControl: 0
-  BrakeControl: 0
---- !u!54 &6812392531891805576
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6812392531891805580}
-  serializedVersion: 2
-  m_Mass: 2000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &6812392531891805579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +59,7 @@ MonoBehaviour:
     isMotor: 1
     isSteer: 1
     wheelWidth: 6.44
-    antiRollForce: 70000
+    antiRollForce: 20000
     baseForwardStiffness: 1.5
     stabilityForwardFactor: 1.5
     baseSidewaysStiffness: 1.75
@@ -177,7 +72,7 @@ MonoBehaviour:
     isMotor: 1
     isSteer: 0
     wheelWidth: 6.44
-    antiRollForce: 70000
+    antiRollForce: 20000
     baseForwardStiffness: 1.5
     stabilityForwardFactor: 1.5
     baseSidewaysStiffness: 1.75
@@ -194,6 +89,93 @@ MonoBehaviour:
   MotorTorque: 0
   SteerAngle: 0
   BrakeTorque: 0
+--- !u!114 &6812392531891805577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812392531891805580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cd70417de5d5c4b9ad926adbd3e8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMotorTorque: 8000
+  maxBrakeTorque: 50000
+  maxSteerAngle: 10
+  engineTorqueCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 15000
+      inSlope: -19.75892
+      outSlope: -19.75892
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 58.320423
+      value: 13847.651
+      inSlope: -26.60836
+      outSlope: -26.60836
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 145.29063
+      value: 10937.819
+      inSlope: -43.302467
+      outSlope: -43.302467
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 240.28966
+      value: 5888.893
+      inSlope: -62.258358
+      outSlope: -62.258358
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 320
+      value: 200
+      inSlope: -71.369576
+      outSlope: -71.369576
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxSpeed: 320
+  linearVelocity: 0
+  ThrottleControl: 0
+  SteerControl: 0
+  BrakeControl: 0
+--- !u!54 &6812392531891805576
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6812392531891805580}
+  serializedVersion: 2
+  m_Mass: 2000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6812392532262072858
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +218,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 70000
+    spring: 20000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -298,7 +280,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 70000
+    spring: 20000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -449,7 +431,7 @@ GameObject:
   m_Layer: 0
   m_Name: CenterOfMass
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -461,7 +443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812392533051622830}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.22, y: 0.42, z: 3.36}
+  m_LocalPosition: {x: -0.08, y: -0.64, z: 3.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -555,7 +537,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 70000
+    spring: 20000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -649,7 +631,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 70000
+    spring: 20000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21

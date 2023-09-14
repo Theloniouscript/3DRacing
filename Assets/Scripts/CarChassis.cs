@@ -37,6 +37,7 @@ public class CarChassis : MonoBehaviour
         if(centerOfMass != null )
         {
             rigidbody.centerOfMass = centerOfMass.localPosition;
+            Debug.Log("centerOfMass");
         }
     }
 
@@ -45,6 +46,22 @@ public class CarChassis : MonoBehaviour
         UpdateAngularDrag();
         UpdateDownForce();
         UpdateWheelAxles();
+    }
+
+    public float GetAverageRpm()
+    {
+        float sum = 0;
+        for (int i = 0; i < wheelAxles.Length; i++)
+        {
+            sum += wheelAxles[i].GetAverageRpm();
+        }
+
+        return sum / wheelAxles.Length;
+    }
+
+    public float GetWheelSpeed() // возвращает скорость колес
+    {
+        return GetAverageRpm() * wheelAxles[0].GetRadius() * 2 * 0.1885f;
     }
 
     private void UpdateDownForce()
@@ -74,7 +91,7 @@ public class CarChassis : MonoBehaviour
 
             //DEBUG
 
-            wheelAxles[i].ApplyMotorTorque(MotorTorque);
+            wheelAxles[i].ApplyMotorTorque(MotorTorque / amountMotorWheel);
             wheelAxles[i].ApplySteerAngle(SteerAngle, wheelBaseLength);
             wheelAxles[i].ApplyBrakeTorque(BrakeTorque);
         }

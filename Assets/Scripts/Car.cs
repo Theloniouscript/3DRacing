@@ -16,7 +16,10 @@ public class Car : MonoBehaviour
 
     private CarChassis chassis;
 
-    public float LinearVelocity => chassis.LinearVelocity;
+    public float LinearVelocity => chassis.LinearVelocity; // скорость всей машины
+    public float WheelSpeed => chassis.GetWheelSpeed(); // скорость колес
+
+    public float MaxSpeed => maxSpeed;
 
     //DEBUG
     [SerializeField] private float linearVelocity;
