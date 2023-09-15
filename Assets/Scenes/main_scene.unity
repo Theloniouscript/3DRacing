@@ -612,6 +612,14 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineMaxRpm
+      value: 7000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineMinRpm
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: maxSteerAngle
       value: 25
       objectReference: {fileID: 0}
@@ -624,8 +632,12 @@ PrefabInstance:
       value: 16000
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineMaxTorque
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[0].time
@@ -633,59 +645,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[1].time
-      value: 1
+      value: 0.094710484
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[2].time
-      value: 54.000267
+      value: 0.24873795
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[3].time
-      value: 187.875
+      value: 0.47373018
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[4].time
-      value: 240.59824
+      value: 0.8457111
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
-      propertyPath: engineTorqueCurve.m_Curve.Array.data[0].value
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[5].time
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[1].value
-      value: 0.6
+      value: 0.40034002
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[2].value
-      value: 11311.305
+      value: 0.79362804
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[3].value
-      value: 7955.5215
+      value: 0.9419311
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[4].value
-      value: 5888.893
+      value: 0.8115287
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[5].value
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[0].inSlope
-      value: -0.39999998
+      value: 4.2269874
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[1].inSlope
-      value: -0.39999998
+      value: 3.390175
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[2].inSlope
-      value: 92.19123
+      value: 1.6062553
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[3].inSlope
-      value: -32.132133
+      value: 0.24937564
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[4].inSlope
-      value: -39.197678
+      value: -0.41094765
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[5].inSlope
+      value: -3.9635303
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[0].inWeight
@@ -693,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[0].outSlope
-      value: -0.39999998
+      value: 4.2269874
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[1].inWeight
@@ -701,19 +725,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[1].outSlope
-      value: -0.39999998
+      value: 3.390175
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[2].outSlope
-      value: 92.19123
+      value: 1.6062553
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[3].inWeight
+      value: 0.77179146
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[3].outSlope
-      value: -32.132133
+      value: 0.24937564
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[4].inWeight
+      value: 0.15121302
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[4].outSlope
-      value: -39.197678
+      value: -0.41094765
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[5].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[5].outSlope
+      value: -3.9635303
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[0].outWeight
@@ -721,11 +761,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[1].outWeight
-      value: 0
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[2].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[3].outWeight
+      value: 0.3771543
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.data[4].outWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[4].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: engineTorqueCurve.m_Curve.Array.data[5].tangentMode
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805579, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: wheelBaseLength
