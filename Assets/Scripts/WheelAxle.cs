@@ -117,7 +117,7 @@ public class WheelAxle // Физика колесной оси
 
         if (rightWheelCollider.isGrounded == true)
         {
-            travelL = (-rightWheelCollider.transform.InverseTransformPoint(rightWheelHit.point).y
+            travelR = (-rightWheelCollider.transform.InverseTransformPoint(rightWheelHit.point).y
                        - rightWheelCollider.radius) / rightWheelCollider.suspensionDistance;
         }
 

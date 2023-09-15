@@ -56,7 +56,7 @@ public class CarInputControl : MonoBehaviour
 
     private void UpdateAxis()
     {
-        verticalAxis = Input.GetAxis("Vertical");
+        verticalAxis = - Input.GetAxis("Vertical");
         horizontalAxis = Input.GetAxis("Horizontal");
         handBrakeAxis = Input.GetAxis("Jump");
     }
