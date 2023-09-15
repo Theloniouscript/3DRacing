@@ -39,6 +39,12 @@ public class CarChassis : MonoBehaviour
             rigidbody.centerOfMass = centerOfMass.localPosition;
             Debug.Log("centerOfMass");
         }
+
+        // повышение точности работы wheel-коллайдера
+        for (int i = 0; i < wheelAxles.Length; i++)
+        {
+            wheelAxles[i].ConfigureVehicleSubsteps(50, 50, 50);
+        }    
     }
 
     private void FixedUpdate()

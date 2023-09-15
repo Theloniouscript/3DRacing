@@ -55,6 +55,13 @@ public class WheelAxle // Физика колесной оси
         SyncMeshTransform();
     }
 
+    // Пограничная скорость и количество подшагов симуляции
+    public void ConfigureVehicleSubsteps(float speedThreshold, int stepBelowThreshold, int stepAboveThreshold)
+    {
+        leftWheelCollider.ConfigureVehicleSubsteps(speedThreshold, stepBelowThreshold, stepAboveThreshold);
+        rightWheelCollider.ConfigureVehicleSubsteps(speedThreshold, stepBelowThreshold, stepAboveThreshold);
+    }
+
     private void UpdateWheelHits()
     {
         leftWheelCollider.GetGroundHit(out leftWheelHit);

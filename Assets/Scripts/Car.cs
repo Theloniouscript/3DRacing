@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
+
 [RequireComponent(typeof(CarChassis))]
 public class Car : MonoBehaviour
 { 
@@ -12,9 +14,14 @@ public class Car : MonoBehaviour
     [SerializeField] private AnimationCurve engineTorqueCurve; // кривая крутящего момента
     [SerializeField] private float engineTorque; // debug, будет не от 0, а от 800 минимум
     [SerializeField] private float engineMaxTorque;
+
     [SerializeField] private float engineRpm; // debug
+    public float EngineRpm => engineRpm;
+
     [SerializeField] private float engineMinRpm; 
+
     [SerializeField] private float engineMaxRpm;
+    public float EngineMaxRpm => engineMaxRpm;
 
     [Header("Gearbox")]
     [SerializeField] private float[] gears;
@@ -31,6 +38,7 @@ public class Car : MonoBehaviour
 
     private CarChassis chassis;
 
+    public event UnityAction<string> GearChanged;
     public float LinearVelocity => chassis.LinearVelocity; // скорость всей машины
     public float WheelSpeed => chassis.GetWheelSpeed(); // скорость колес
 
@@ -61,6 +69,13 @@ public class Car : MonoBehaviour
 
     // Gearbox обертка для метода переключения передач ShiftGear()
 
+    public string GetSelectedGearName()
+    {
+        if (selectedGear == rearGear) return "R";
+        if (selectedGear == 0) return "N";
+
+        return (selectedGearIndex + 1).ToString();
+    }
     private void AutoGearShift()
     {
         if(selectedGear < 0) return;
@@ -82,6 +97,7 @@ public class Car : MonoBehaviour
     public void ShiftToReverseGear() // задний ход
     {
         selectedGear = rearGear;
+        GearChanged?.Invoke(GetSelectedGearName());
     }
 
     public void ShiftToFirstGear() // переключение на первую передачу
@@ -92,6 +108,7 @@ public class Car : MonoBehaviour
     public void ShiftToNeutral()
     {
         selectedGear = 0;
+        GearChanged?.Invoke(GetSelectedGearName());
     }
     private void ShiftGear(int gearIndex) // переключение передач
     {
@@ -100,14 +117,15 @@ public class Car : MonoBehaviour
 
         // Debug какая передача сейчас включена:
         selectedGear = gearIndex;
+        GearChanged?.Invoke(GetSelectedGearName());
     }
 
     private void UpdateEngineTorque() // симуляция двигателя
-    {        
+    {
         engineRpm = engineMinRpm + Mathf.Abs(chassis.GetAverageRpm()) * selectedGear * finalDriveRatio; // берем обороты двигателя из оборотов колес
         engineRpm = Mathf.Clamp(engineRpm, engineMinRpm, engineMaxRpm); // ограничиваем, чтобы двигатель не крутился быстрее
 
         // регулируем задний ход передачи
-        engineTorque = engineTorqueCurve.Evaluate(engineRpm / engineMaxRpm) * engineMaxTorque * finalDriveRatio * Mathf.Sign(selectedGear);
+        engineTorque = engineTorqueCurve.Evaluate(engineRpm / engineMaxRpm) * engineMaxTorque * finalDriveRatio * Mathf.Sign(selectedGear) * gears[0];
     }
 }

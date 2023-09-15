@@ -1,5 +1,186 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1436119321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436119322}
+  - component: {fileID: 1436119325}
+  - component: {fileID: 1436119324}
+  - component: {fileID: 1436119323}
+  m_Layer: 0
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1436119322
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436119321}
+  m_LocalRotation: {x: -0, y: -0, z: 1.1641532e-10, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6.52}
+  m_LocalScale: {x: 0.0010000002, y: 0.001, z: 0.001}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2095366314}
+  m_Father: {fileID: 6812392531891805583}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0000006556511, y: 1.46}
+  m_SizeDelta: {x: 1500, y: 800}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1436119325
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436119321}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 6812392532747974294}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 12
+  m_TargetDisplay: 0
+--- !u!114 &1436119324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436119321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!114 &1436119323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436119321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!1 &2095366313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095366314}
+  - component: {fileID: 2095366316}
+  - component: {fileID: 2095366315}
+  m_Layer: 0
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2095366314
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095366313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 17.29}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1436119322}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2095366316
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095366313}
+  m_CullTransparentMesh: 1
+--- !u!114 &2095366315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095366313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.90588236, g: 0.3473162, b: 0.082352914, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 300
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 000
 --- !u!1 &6812392531891805580
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +217,7 @@ Transform:
   - {fileID: 6413340924087732556}
   - {fileID: 6812392532765533455}
   - {fileID: 6812392533051622825}
+  - {fileID: 1436119322}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 209.283, z: 0}
@@ -59,12 +241,12 @@ MonoBehaviour:
     isMotor: 1
     isSteer: 1
     wheelWidth: 6.44
-    antiRollForce: 20000
+    antiRollForce: 70000
     baseForwardStiffness: 1.5
     stabilityForwardFactor: 1.5
     baseSidewaysStiffness: 1.75
-    stabilitySidewaysFactor: 4
-    additionalWheelDownForce: 100
+    stabilitySidewaysFactor: 1
+    additionalWheelDownForce: 150
   - leftWheelCollider: {fileID: 6812392533499884616}
     rightWheelCollider: {fileID: 6812392532262072804}
     leftWheelMesh: {fileID: 2517506147897354249}
@@ -72,12 +254,12 @@ MonoBehaviour:
     isMotor: 1
     isSteer: 0
     wheelWidth: 6.44
-    antiRollForce: 20000
+    antiRollForce: 70000
     baseForwardStiffness: 1.5
     stabilityForwardFactor: 1.5
     baseSidewaysStiffness: 1.75
-    stabilitySidewaysFactor: 4
-    additionalWheelDownForce: 100
+    stabilitySidewaysFactor: 1
+    additionalWheelDownForce: 150
   wheelBaseLength: 7
   centerOfMass: {fileID: 6812392533051622825}
   angularDragMin: 0.3
@@ -101,53 +283,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cd70417de5d5c4b9ad926adbd3e8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMotorTorque: 8000
-  maxBrakeTorque: 50000
-  maxSteerAngle: 10
+  maxBrakeTorque: 5000
+  maxSteerAngle: 25
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 15000
-      inSlope: -19.75892
-      outSlope: -19.75892
+      value: 0
+      inSlope: 4.2269874
+      outSlope: 4.2269874
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 58.320423
-      value: 13847.651
-      inSlope: -26.60836
-      outSlope: -26.60836
+      time: 0.094710484
+      value: 0.40034002
+      inSlope: 3.390175
+      outSlope: 3.390175
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 145.29063
-      value: 10937.819
-      inSlope: -43.302467
-      outSlope: -43.302467
+      time: 0.24873795
+      value: 0.79362804
+      inSlope: 1.6062553
+      outSlope: 1.6062553
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 240.28966
-      value: 5888.893
-      inSlope: -62.258358
-      outSlope: -62.258358
-      tangentMode: 34
+      time: 0.47373018
+      value: 0.9419311
+      inSlope: 0.24937564
+      outSlope: 0.24937564
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.77179146
+      outWeight: 0.3771543
+    - serializedVersion: 3
+      time: 0.8457111
+      value: 0.8115287
+      inSlope: -0.41094765
+      outSlope: -0.41094765
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15121302
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 320
-      value: 200
-      inSlope: -71.369576
-      outSlope: -71.369576
+      time: 1
+      value: 0.2
+      inSlope: -3.9635303
+      outSlope: -3.9635303
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -155,10 +345,27 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  engineTorque: 0
+  engineMaxTorque: 5000
+  engineRpm: 0
+  engineMinRpm: 800
+  engineMaxRpm: 7000
+  gears:
+  - 3.7
+  - 2.6
+  - 1.6
+  - 1
+  - 0.7
+  finalDriveRatio: 3.7
+  upShiftEngineRpm: 6400
+  downShiftEngineRpm: 3000
+  selectedGear: 0
+  rearGear: -3.7
+  selectedGearIndex: 0
   maxSpeed: 320
   linearVelocity: 0
   ThrottleControl: 0
-  SteerControl: 0
+  SteerControl: 5
   BrakeControl: 0
 --- !u!54 &6812392531891805576
 Rigidbody:
@@ -168,7 +375,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812392531891805580}
   serializedVersion: 2
-  m_Mass: 2000
+  m_Mass: 2500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -218,7 +425,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 20000
+    spring: 70000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -280,7 +487,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 20000
+    spring: 70000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -325,14 +532,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6812392532747974292}
-  m_LocalRotation: {x: -0, y: -0.9999269, z: -0, w: 0.0120911375}
-  m_LocalPosition: {x: -0.08, y: 1.56, z: 14.45}
+  m_LocalRotation: {x: 0.0010098108, y: -0.99643356, z: 0.083510496, w: 0.012048896}
+  m_LocalPosition: {x: -0.01, y: 4.37, z: 17.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6812392531891805583}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -178.614, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.581, y: -178.614, z: 0}
 --- !u!20 &6812392532747974294
 Camera:
   m_ObjectHideFlags: 0
@@ -358,13 +565,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -431,7 +638,7 @@ GameObject:
   m_Layer: 0
   m_Name: CenterOfMass
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -537,7 +744,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 20000
+    spring: 70000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
@@ -631,7 +838,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 1.11
   m_SuspensionSpring:
-    spring: 20000
+    spring: 70000
     damper: 4500
     targetPosition: 0
   m_SuspensionDistance: 0.21
