@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,12 +26,16 @@ public class CarInputControl : MonoBehaviour
         UpdateThrottleAndBrake();
         UpdateSteer();
         UpdateAutoBrake();
+
+        // Debug - вызов передач
+        if (Input.GetKeyDown(KeyCode.E)) car.UpGear();
+        if (Input.GetKeyDown(KeyCode.Q)) car.DownGear();
     }
     private void UpdateThrottleAndBrake()
     {
         if (Mathf.Sign(verticalAxis) == Mathf.Sign(wheelSpeed) || Mathf.Abs(wheelSpeed) < 0.5f)
         {
-            car.ThrottleControl = verticalAxis;
+            car.ThrottleControl = Mathf.Abs(verticalAxis);
             car.BrakeControl = 0;
         }
         else
@@ -39,6 +43,20 @@ public class CarInputControl : MonoBehaviour
             car.ThrottleControl = 0;
             car.BrakeControl = brakeCurve.Evaluate(wheelSpeed / car.MaxSpeed);
         }
+
+        // Gears включение задней передачи
+
+        if(verticalAxis < 0 && wheelSpeed > -0.5f && wheelSpeed <= 0.5f) // жмем назад и как бы стоим, скорость колес в минимальном диапазоне
+        {
+            car.ShiftToReverseGear();
+        }
+
+        if(verticalAxis > 0 && wheelSpeed > -0.5f && wheelSpeed < 0.5f) // жмем вперед, возвращаемся к первой передаче
+        {
+            car.ShiftToFirstGear();
+        }
+
+
     }
 
     private void UpdateSteer()
@@ -56,7 +74,7 @@ public class CarInputControl : MonoBehaviour
 
     private void UpdateAxis()
     {
-        verticalAxis = - Input.GetAxis("Vertical");
+        verticalAxis = - Input.GetAxis("Vertical"); // временно, переделать модель из Blender - rotation по направляющей оси на 180 градусов
         horizontalAxis = Input.GetAxis("Horizontal");
         handBrakeAxis = Input.GetAxis("Jump");
     }

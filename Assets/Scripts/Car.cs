@@ -16,6 +16,16 @@ public class Car : MonoBehaviour
     [SerializeField] private float engineMinRpm; 
     [SerializeField] private float engineMaxRpm;
 
+    [Header("Gearbox")]
+    [SerializeField] private float[] gears;
+    [SerializeField] private float finalDriveRatio; // передача дифференциала
+
+    [SerializeField] private float upShiftEngineRpm;
+    [SerializeField] private float downShiftEngineRpm;
+    // DEBUG
+    [SerializeField] private float selectedGear; // выбранная передача из массива gears
+    [SerializeField] private float rearGear; // задний ход
+    [SerializeField] private int selectedGearIndex;
 
     [SerializeField] private int maxSpeed;
 
@@ -40,6 +50,7 @@ public class Car : MonoBehaviour
         linearVelocity = LinearVelocity; // будет отсчитываться автоматически
 
         UpdateEngineTorque();
+        AutoGearShift();
 
         if (LinearVelocity >= maxSpeed) engineTorque = 0;
 
@@ -48,11 +59,55 @@ public class Car : MonoBehaviour
         chassis.BrakeTorque = BrakeControl * maxBrakeTorque;       
     }
 
-    private void UpdateEngineTorque() // симуляция двигателя
+    // Gearbox обертка для метода переключения передач ShiftGear()
+
+    private void AutoGearShift()
     {
-        engineRpm = engineMinRpm + Mathf.Abs(chassis.GetAverageRpm()) * 3.7f; // берем обороты двигателя из оборотов колес
+        if(selectedGear < 0) return;
+
+        if (engineRpm >= upShiftEngineRpm) UpGear();
+        if (engineRpm < downShiftEngineRpm) DownGear();
+    }
+
+    public void UpGear() // подднять передачу
+    {
+        ShiftGear(selectedGearIndex + 1);
+    }
+
+    public void DownGear() // опустить передачу
+    {
+        ShiftGear(selectedGearIndex - 1);
+    }
+
+    public void ShiftToReverseGear() // задний ход
+    {
+        selectedGear = rearGear;
+    }
+
+    public void ShiftToFirstGear() // переключение на первую передачу
+    {
+        ShiftGear(0);
+    }
+
+    public void ShiftToNeutral()
+    {
+        selectedGear = 0;
+    }
+    private void ShiftGear(int gearIndex) // переключение передач
+    {
+        gearIndex = Mathf.Clamp(gearIndex, 0, gears.Length- 1);
+        selectedGear = gears[gearIndex];
+
+        // Debug какая передача сейчас включена:
+        selectedGear = gearIndex;
+    }
+
+    private void UpdateEngineTorque() // симуляция двигателя
+    {        
+        engineRpm = engineMinRpm + Mathf.Abs(chassis.GetAverageRpm()) * selectedGear * finalDriveRatio; // берем обороты двигателя из оборотов колес
         engineRpm = Mathf.Clamp(engineRpm, engineMinRpm, engineMaxRpm); // ограничиваем, чтобы двигатель не крутился быстрее
 
-        engineTorque = engineTorqueCurve.Evaluate(engineRpm / engineMaxRpm) * engineMaxTorque;
+        // регулируем задний ход передачи
+        engineTorque = engineTorqueCurve.Evaluate(engineRpm / engineMaxRpm) * engineMaxTorque * finalDriveRatio * Mathf.Sign(selectedGear);
     }
 }

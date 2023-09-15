@@ -605,7 +605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: maxSpeed
-      value: 200
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: rearGear
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: SteerControl
@@ -618,6 +622,10 @@ PrefabInstance:
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineMinRpm
       value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: selectedGear
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: maxSteerAngle
@@ -633,7 +641,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineMaxTorque
-      value: 10000
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: finalDriveRatio
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: upShiftEngineRpm
+      value: 6400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: downShiftEngineRpm
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.data[0]
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.data[1]
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.data[2]
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.data[4]
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: engineTorqueCurve.m_Curve.Array.size
