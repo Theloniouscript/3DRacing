@@ -394,37 +394,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0019286401
-      value: 0.9976415
-      inSlope: -0.4374417
-      outSlope: -0.4374417
+      time: 0
+      value: 1
+      inSlope: -0.99393636
+      outSlope: -0.99393636
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.26679456
-      value: 0.8800908
-      inSlope: -0.5578187
-      outSlope: -0.5578187
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.6025233
-      value: 0.652401
-      inSlope: -1.1254437
-      outSlope: -1.1254437
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.0038573
-      value: 0.021226406
-      inSlope: -1.5726918
-      outSlope: -1.5726918
+      time: 0.99902344
+      value: 0.0070343018
+      inSlope: -0.99393636
+      outSlope: -0.99393636
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -436,49 +418,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0028953552
-      value: 0.95755005
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      time: 0
+      value: 1
+      inSlope: -0.9887005
+      outSlope: -0.9887005
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.23471095
-      value: 0.8266763
-      inSlope: -0.25459266
-      outSlope: -0.25459266
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.47652808
-      value: 0.46840107
-      inSlope: -0.9207182
-      outSlope: -0.9207182
-      tangentMode: 0
+      time: 1
+      value: 0.011299517
+      inSlope: -0.9887005
+      outSlope: -0.9887005
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.78332293
-      value: 0.17522901
-      inSlope: -0.7719205
-      outSlope: -0.7719205
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.005786
-      value: 0.03066039
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -650,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: maxSpeed
-      value: 120
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: SteerControl
