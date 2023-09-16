@@ -11,6 +11,8 @@ public class WheelEffects : MonoBehaviour
 
     [SerializeField] private ParticleSystem[] wheelSmoke;
 
+    [SerializeField] private new AudioSource audio;
+
     private WheelHit wheelHit;
     private Transform[] skidTrail; // чтобы следить за колесом
 
@@ -21,6 +23,9 @@ public class WheelEffects : MonoBehaviour
 
     private void Update()
     {
+        bool isSlip = false; // изначально мы не скользим
+                             // алгоритм с флагом
+
         for(int i = 0; i < wheels.Length; i++) 
         {
             wheels[i].GetGroundHit(out wheelHit);
@@ -32,8 +37,10 @@ public class WheelEffects : MonoBehaviour
                     if (skidTrail[i] == null)
                         skidTrail[i] = Instantiate(skidPrefab).transform;
 
+                    if (audio.isPlaying == false) audio.Play();
+
                     if (skidTrail[i] != null)
-                    {
+                    {                        
                         skidTrail[i].position = wheelHit.point; // wheelHit.point = wheels[i].transform.position - wheelHit.normal * wheels[i].radius
                                                                 // точка внизу в центре колеса
                         skidTrail[i].forward = -wheelHit.normal; // normal - направление колеса
@@ -44,12 +51,18 @@ public class WheelEffects : MonoBehaviour
                         //continue; // чтобы переходил к следующему колесу
                     }
 
+                    isSlip = true;
                     continue; // чтобы переходил к следующему колесу
                 }
             }
 
             skidTrail[i] = null; // как только мы оторвались от Земли и перестали скользить
             wheelSmoke[i].Stop();
+        }
+
+        if(isSlip== false)
+        {
+            audio.Stop(); // если ни одно колесо не проскальзывает
         }
     }
 }
