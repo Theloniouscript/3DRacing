@@ -35,7 +35,7 @@ public class CarInputControl : MonoBehaviour
     {
         if (Mathf.Sign(verticalAxis) == Mathf.Sign(wheelSpeed) || Mathf.Abs(wheelSpeed) < 0.5f)
         {
-            car.ThrottleControl = Mathf.Abs(verticalAxis);
+            car.ThrottleControl = verticalAxis;
             car.BrakeControl = 0;
         }
         else
@@ -46,12 +46,12 @@ public class CarInputControl : MonoBehaviour
 
         // Gears включение задней передачи
 
-        if(verticalAxis < 0 && wheelSpeed > -0.5f && wheelSpeed <= 0.5f) // жмем назад и как бы стоим, скорость колес в минимальном диапазоне
+        if (verticalAxis > 0 && wheelSpeed > -0.5f && wheelSpeed <= 0.5f) // жмем назад и как бы стоим, скорость колес в минимальном диапазоне
         {
             car.ShiftToReverseGear();
         }
 
-        if(verticalAxis > 0 && wheelSpeed > -0.5f && wheelSpeed < 0.5f) // жмем вперед, возвращаемся к первой передаче
+        if (verticalAxis < 0 && wheelSpeed > -0.5f && wheelSpeed < 0.5f) // жмем вперед, возвращаемся к первой передаче
         {
             car.ShiftToFirstGear();
         }
@@ -75,6 +75,7 @@ public class CarInputControl : MonoBehaviour
     private void UpdateAxis()
     {
         verticalAxis = - Input.GetAxis("Vertical"); // временно, переделать модель из Blender - rotation по направляющей оси на 180 градусов
+        Debug.Log("verticalAxis = " + verticalAxis);
         horizontalAxis = Input.GetAxis("Horizontal");
         handBrakeAxis = Input.GetAxis("Jump");
     }

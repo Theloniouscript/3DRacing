@@ -1100,6 +1100,22 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: rearGear
+      value: -3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: selectedGear
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: finalDriveRatio
+      value: 4.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6812392531891805577, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
+      propertyPath: gears.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6812392531891805580, guid: 86f8047b73ab4314a80316a0091435f8, type: 3}
       propertyPath: m_Name
       value: Car

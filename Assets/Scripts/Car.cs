@@ -58,7 +58,7 @@ public class Car : MonoBehaviour
         linearVelocity = LinearVelocity; // будет отсчитываться автоматически
 
         UpdateEngineTorque();
-        AutoGearShift();
+       // AutoGearShift();
 
         if (LinearVelocity >= maxSpeed) engineTorque = 0;
 
@@ -74,17 +74,21 @@ public class Car : MonoBehaviour
         if (selectedGear == rearGear) return "R";
         if (selectedGear == 0) return "N";
 
+        Debug.Log("GearName is " + selectedGear);
+        Debug.Log("GearName is " + selectedGearIndex);
+
         return (selectedGearIndex + 1).ToString();
+        
     }
     private void AutoGearShift()
     {
-        if(selectedGear < 0) return;
+        if (selectedGear < 0) return;
 
         if (engineRpm >= upShiftEngineRpm) UpGear();
         if (engineRpm < downShiftEngineRpm) DownGear();
     }
 
-    public void UpGear() // подднять передачу
+    public void UpGear() // поднять передачу
     {
         ShiftGear(selectedGearIndex + 1);
     }
@@ -116,7 +120,7 @@ public class Car : MonoBehaviour
         selectedGear = gears[gearIndex];
 
         // Debug какая передача сейчас включена:
-        selectedGear = gearIndex;
+        selectedGearIndex = gearIndex;
         GearChanged?.Invoke(GetSelectedGearName());
     }
 
