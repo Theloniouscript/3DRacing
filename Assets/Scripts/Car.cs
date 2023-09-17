@@ -49,6 +49,9 @@ public class Car : MonoBehaviour
     public float ThrottleControl; // педаль газа
     public float SteerControl;
     public float BrakeControl;
+
+
+    public float NormalizeLinearVelocity => chassis.LinearVelocity / maxSpeed;
     private void Start()
     {
         chassis = GetComponent<CarChassis>();
