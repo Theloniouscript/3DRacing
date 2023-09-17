@@ -1352,6 +1352,7 @@ GameObject:
   - component: {fileID: 1852466782}
   - component: {fileID: 1852466781}
   - component: {fileID: 1852466785}
+  - component: {fileID: 1852466786}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -1461,6 +1462,21 @@ MonoBehaviour:
   camera: {fileID: 1852466783}
   minFieldOfView: 40
   maxFieldOfView: 75
+--- !u!114 &1852466786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852466780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376a26f4d739b2448b2c658bdd613bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 74516076}
+  shakeAmount: 3
+  normalizeSpeedShake: 0.782
 --- !u!1 &1872983803
 GameObject:
   m_ObjectHideFlags: 0
