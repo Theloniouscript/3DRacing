@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,9 +15,14 @@ public class TrackPointCircuit : MonoBehaviour
     public event UnityAction<int> LapCompleted;
     public event UnityAction<TrackPoint> TrackPointTriggered;
     [SerializeField] private TrackType type;
-    [SerializeField] private TrackPoint[] points;
+    private TrackPoint[] points;
 
     private int lapsCompleted = -1;
+
+    private void Awake()
+    {
+        BuildCircuit();
+    }
 
     private void Start()
     {
@@ -62,5 +67,11 @@ public class TrackPointCircuit : MonoBehaviour
                     LapCompleted?.Invoke(lapsCompleted);
             }
         }
+    }
+
+    [ContextMenu(nameof(BuildCircuit))]
+    private void BuildCircuit() // автоматизация сборки путевых точек
+    {
+        points = TrackCircuitBuilder.Build(transform, type);
     }
 }

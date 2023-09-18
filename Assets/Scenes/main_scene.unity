@@ -201,9 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacd083990c4a374e851c6f98b0a7db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Next: {fileID: 0}
+  Next: {fileID: 1468681452}
   IsFirst: 0
-  IsLast: 1
+  IsLast: 0
 --- !u!65 &460138895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Next: {fileID: 1080246472}
   IsFirst: 1
-  IsLast: 0
+  IsLast: 1
 --- !u!65 &1468681453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2068,11 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d31a11d5a86544e8c08f932d41bb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  points:
-  - {fileID: 1468681452}
-  - {fileID: 1080246472}
-  - {fileID: 460138894}
+  type: 0
 --- !u!4 &1902123294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2127629854048446613, guid: ef976968aa0ee274684e3ebe815dd48c, type: 3}

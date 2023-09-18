@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -31,5 +32,10 @@ public class TrackPoint : MonoBehaviour
         Triggered?.Invoke(this);
     }
 
-
+    public void Reset() // сброс массива
+    {
+        Next = null;
+        IsLast = false;
+        IsFirst= false;
+    }
 }
