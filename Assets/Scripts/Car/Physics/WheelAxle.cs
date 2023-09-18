@@ -67,7 +67,7 @@ public class WheelAxle // Физика колесной оси
         leftWheelCollider.GetGroundHit(out leftWheelHit);
         rightWheelCollider.GetGroundHit(out rightWheelHit);
 
-        Debug.Log("UpdateWheelHits");
+       // Debug.Log("UpdateWheelHits");
     }
 
     private void CorrectStiffness() // общая сила трения, проскальзывание колеса
@@ -91,7 +91,7 @@ public class WheelAxle // Физика колесной оси
         leftWheelCollider.sidewaysFriction = leftSideways;
         rightWheelCollider.sidewaysFriction = rightSideways;
 
-        Debug.Log("CorrectStiffness");
+        // Debug.Log("CorrectStiffness");
     }
 
     private void ApplyDownForce() // прижимная сила для колес
@@ -106,12 +106,12 @@ public class WheelAxle // Физика колесной оси
                 (rightWheelHit.normal * -additionalWheelDownForce * rightWheelCollider.attachedRigidbody.velocity.magnitude,
                 rightWheelCollider.transform.position);
 
-        Debug.Log("ApplyDownForce");
+        // Debug.Log("ApplyDownForce");
     }
 
     private void ApplyAntiRoll() // стабилизатор поперечной устойчивости
     {
-        Debug.Log("ApplyAntiroll");
+       //  Debug.Log("ApplyAntiroll");
 
         float travelL = 1.0f;
         float travelR = 1.0f;
@@ -149,7 +149,7 @@ public class WheelAxle // Физика колесной оси
     public void ApplySteerAngle(float steerAngle, float wheelBaseLength) // угол поворота // угол Аккермана
     {
 
-        Debug.Log("ApplySteerAngle");
+        // Debug.Log("ApplySteerAngle");
 
         if (isSteer == false) return;
 
@@ -186,7 +186,7 @@ public class WheelAxle // Физика колесной оси
     public void ApplyMotorTorque(float motorTorque) // крутящий момент
     {
 
-        Debug.Log("ApplyMotorTorque");
+        // Debug.Log("ApplyMotorTorque");
 
         if (isMotor == false) return;
         leftWheelCollider.motorTorque = motorTorque;
@@ -195,7 +195,7 @@ public class WheelAxle // Физика колесной оси
 
     public void ApplyBrakeTorque(float brakeTorque)
     {
-        Debug.Log("ApplyBrakeTorque");
+        // Debug.Log("ApplyBrakeTorque");
 
         leftWheelCollider.brakeTorque = brakeTorque;
         rightWheelCollider.brakeTorque = brakeTorque;
@@ -205,7 +205,7 @@ public class WheelAxle // Физика колесной оси
     private void SyncMeshTransform() // синхронизирует коллайдеры и трансформ
     {
 
-        Debug.Log("SyncMeshTransform");
+       //  Debug.Log("SyncMeshTransform");
 
         UpdateWheelTransform(leftWheelCollider, leftWheelMesh);
         UpdateWheelTransform(rightWheelCollider, rightWheelMesh);
@@ -214,7 +214,7 @@ public class WheelAxle // Физика колесной оси
     private void UpdateWheelTransform(WheelCollider wheelCollider, Transform wheelTransform)
     {
 
-        Debug.Log("UpdateWheelTransform");
+       //  Debug.Log("UpdateWheelTransform");
 
         Vector3 position;
         Quaternion rotation;

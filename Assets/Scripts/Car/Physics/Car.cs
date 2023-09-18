@@ -77,8 +77,8 @@ public class Car : MonoBehaviour
         if (selectedGear == rearGear) return "R";
         if (selectedGear == 0) return "N";
 
-        Debug.Log("GearName is " + selectedGear);
-        Debug.Log("GearName is " + selectedGearIndex);
+        /*Debug.Log("GearName is " + selectedGear);
+        Debug.Log("GearName is " + selectedGearIndex);*/
 
         return (selectedGearIndex + 1).ToString();
         

@@ -75,7 +75,7 @@ public class CarInputControl : MonoBehaviour
     private void UpdateAxis()
     {
         verticalAxis = - Input.GetAxis("Vertical"); // временно, переделать модель из Blender - rotation по направляющей оси на 180 градусов
-        Debug.Log("verticalAxis = " + verticalAxis);
+        // Debug.Log("verticalAxis = " + verticalAxis);
         horizontalAxis = Input.GetAxis("Horizontal");
         handBrakeAxis = Input.GetAxis("Jump");
     }

@@ -37,7 +37,7 @@ public class CarChassis : MonoBehaviour
         if(centerOfMass != null )
         {
             rigidbody.centerOfMass = centerOfMass.localPosition;
-            Debug.Log("centerOfMass");
+            //Debug.Log("centerOfMass");
         }
 
         // повышение точности работы wheel-коллайдера

@@ -21,11 +21,11 @@ public class CarEngineIndicator : MonoBehaviour
 
         for (int i = 0; i < colors.Length; i ++)
         {
-            Debug.Log("ColorsUpdate");
+            // Debug.Log("ColorsUpdate");
             if(car.EngineRpm <= colors[i].MaxRpm)
             {
                 image.color = colors[i].color;
-                Debug.Log(colors[i].color);
+                // Debug.Log(colors[i].color);
                 break; // чтобы не был всегда красный цвет 
             }
         }
