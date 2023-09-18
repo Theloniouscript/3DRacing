@@ -18,12 +18,18 @@ public class TrackPoint : MonoBehaviour
     public void Passed()
     {
         isTarget= false;
+        OnPassed();
     }
 
     public void AssignAsTarget()
     {
         isTarget = true;
+        OnAssignAsTarget();
     }
+
+    protected virtual void OnPassed() { }
+
+    protected virtual void OnAssignAsTarget() { }
 
     private void OnTriggerEnter(Collider other)
     {
