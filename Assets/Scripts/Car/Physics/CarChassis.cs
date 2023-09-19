@@ -22,6 +22,7 @@ public class CarChassis : MonoBehaviour
     [SerializeField] private float downForceFactor; // коэффициент прижимной силы
 
     private new Rigidbody rigidbody;
+    public Rigidbody Rigidbody => rigidbody == null ? GetComponent<Rigidbody>() : rigidbody; // чтобы убрать лишние ссылки
 
     public float LinearVelocity => rigidbody.velocity.magnitude * 3.6f; // перевод в км/ч
 

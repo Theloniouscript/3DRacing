@@ -40,11 +40,11 @@ public class UICountdownTimer : MonoBehaviour
     {
         text.text = countdouwnTimer.Value.ToString("F0"); // F0 - чтобы не было символов после запятой
 
-        /*if (text.text == "0")
-            text.text = "GO!";*/
-
-        if (countdouwnTimer.Value == 0)
+        if (text.text == "0")
             text.text = "GO!";
+
+        /*if (countdouwnTimer.Value == 0)
+            text.text = "GO!";*/
     }
 
 

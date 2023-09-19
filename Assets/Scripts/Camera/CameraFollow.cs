@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow : CameraComponent
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private new Rigidbody rigidbody;
-
     [SerializeField] private float speedThreshold;
 
     [Header("Offset")]
@@ -18,6 +15,10 @@ public class CameraFollow : MonoBehaviour
     [Header("Damping")]
     [SerializeField] private float rotationDamping;
     [SerializeField] private float heightDamping;
+
+    private Transform target;
+
+    private new Rigidbody rigidbody;
 
     private void FixedUpdate()
     {
@@ -55,6 +56,13 @@ public class CameraFollow : MonoBehaviour
 
         
 
+    }
+
+    public override void SetProperties(Car car, Camera camera)
+    {
+        base.SetProperties(car, camera);
+        target = car.transform;
+        rigidbody = car.Rigidbody;
     }
 
 }

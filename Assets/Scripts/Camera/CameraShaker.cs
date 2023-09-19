@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraShaker : MonoBehaviour
+public class CameraShaker : CameraComponent
 {
-    [SerializeField] private Car car;
     [SerializeField] private float shakeAmount;
     [SerializeField] [Range(0.0f, 1.0f)] private float normalizeSpeedShake;
 

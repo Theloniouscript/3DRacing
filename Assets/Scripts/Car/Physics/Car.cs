@@ -44,6 +44,8 @@ public class Car : MonoBehaviour
 
     public float MaxSpeed => maxSpeed;
 
+    public Rigidbody Rigidbody => chassis == null ? GetComponent<CarChassis>().Rigidbody : chassis.Rigidbody; // убираем лишние ссылки
+
     //DEBUG
     [SerializeField] private float linearVelocity;
     public float ThrottleControl; // педаль газа
