@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviour, IDependency<RaceStateTracker>
 {
-    [SerializeField] private RaceStateTracker raceStateTracker;
+    private RaceStateTracker raceStateTracker;
+    public void Construct(RaceStateTracker obj) => raceStateTracker = obj;
+
     [SerializeField] private Car car;
     [SerializeField] private new Camera camera;
     [SerializeField] private CameraFollow follower;
