@@ -14,7 +14,10 @@ public class TrackPointCircuit : MonoBehaviour
 {
     public event UnityAction<int> LapCompleted;
     public event UnityAction<TrackPoint> TrackPointTriggered;
+
     [SerializeField] private TrackType type;
+    public TrackType Type => type; 
+
     private TrackPoint[] points;
 
     private int lapsCompleted = -1;
