@@ -71,6 +71,12 @@ public class CarChassis : MonoBehaviour
         return GetAverageRpm() * wheelAxles[0].GetRadius() * 2 * 0.1885f;
     }
 
+    public void Reset()
+    {
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+    }
+
     private void UpdateDownForce()
     {
         float downForce = Mathf.Clamp(downForceFactor * LinearVelocity, downForceMin, downForceMax);

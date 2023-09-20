@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -118,6 +119,26 @@ public class Car : MonoBehaviour
     {
         selectedGear = 0;
         GearChanged?.Invoke(GetSelectedGearName());
+    }
+
+    public void Respawn(Vector3 position, Quaternion rotation)
+    {
+        Reset();
+        transform.position = position;
+        transform.rotation = rotation;
+    }
+
+    public void Reset()
+    {
+        chassis.Reset();
+        chassis.MotorTorque= 0;
+        chassis.SteerAngle= 0;
+        chassis.BrakeTorque= 0;
+
+        ThrottleControl = 0;
+        BrakeControl= 0;
+        SteerControl= 0;
+
     }
     private void ShiftGear(int gearIndex) // переключение передач
     {

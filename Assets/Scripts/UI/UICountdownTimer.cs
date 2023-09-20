@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UICountdownTimer : MonoBehaviour, IDependency<RaceStateTracker>
 {
     [SerializeField] private Text text;
+    [SerializeField] private Text hintText;
     private Timer countdownTimer;
 
     private RaceStateTracker raceStateTracker;
@@ -19,6 +20,7 @@ public class UICountdownTimer : MonoBehaviour, IDependency<RaceStateTracker>
         raceStateTracker.Started += OnRaceStarted;
 
         text.enabled = false;
+        hintText.enabled = true;
     }
 
     private void OnDestroy()
@@ -29,8 +31,9 @@ public class UICountdownTimer : MonoBehaviour, IDependency<RaceStateTracker>
 
     private void OnPreparationStarted()
     {
-        text.enabled = true; // для текста
+        text.enabled = true; // для текста счетчика
         enabled = true; // для таймера
+        hintText.enabled = false;
     }
 
     private void OnRaceStarted()

@@ -80,16 +80,20 @@ public class CarInputControl : MonoBehaviour
         handBrakeAxis = Input.GetAxis("Jump");
     }
 
-    public void Stop()
+    public void Reset()
     {
         verticalAxis = 0;
         horizontalAxis = 0;
         handBrakeAxis = 0;
 
-        car.ThrottleControl= 0;
+        car.ThrottleControl = 0;
         car.SteerControl = 0;
         car.BrakeControl = 0;
     }
 
-   
+    public void Stop()
+    {
+        Reset();
+        car.BrakeControl = 1;
+    }
 }
