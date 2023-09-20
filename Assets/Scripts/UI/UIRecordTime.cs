@@ -14,9 +14,13 @@ public class UIRecordTime : MonoBehaviour, IDependency<RaceResultTime>, IDepende
 
     [SerializeField] private GameObject goldRecordObject;
     [SerializeField] private GameObject playerRecordObject;
+    [SerializeField] private GameObject finalRecordObject;
 
     [SerializeField] private Text goldRecordTime;
     [SerializeField] private Text playerRecordTime;
+
+    [SerializeField] private Text recordTimeText;
+    [SerializeField] private Text currentTimeText;
 
     private void Start()
     {
@@ -25,6 +29,7 @@ public class UIRecordTime : MonoBehaviour, IDependency<RaceResultTime>, IDepende
 
         goldRecordObject.SetActive(false); 
         playerRecordObject.SetActive(false);
+        finalRecordObject.SetActive(false);
     }
 
     private void OnDestroy()
@@ -35,7 +40,9 @@ public class UIRecordTime : MonoBehaviour, IDependency<RaceResultTime>, IDepende
 
     private void OnRaceStarted()
     {
-        if(raceResultTime.PlayerRecordTime > raceResultTime.GoldTime || raceResultTime.RecordWasSet == false)
+        finalRecordObject.SetActive(false);
+
+        if (raceResultTime.PlayerRecordTime > raceResultTime.GoldTime || raceResultTime.RecordWasSet == false)
         {
             goldRecordObject.SetActive(true);
 
@@ -47,13 +54,18 @@ public class UIRecordTime : MonoBehaviour, IDependency<RaceResultTime>, IDepende
             playerRecordObject.SetActive(true);
 
             playerRecordTime.text = StringTime.SecondToTimeString(raceResultTime.PlayerRecordTime);
-            Debug.Log(raceResultTime.PlayerRecordTime);
+            
         }
-    }  
+    }
 
     private void OnRaceCompleted()
     {
         goldRecordObject.SetActive(false);
         playerRecordObject.SetActive(false);
+
+        finalRecordObject.SetActive(true);
+
+        recordTimeText.text = StringTime.SecondToTimeString(raceResultTime.PlayerRecordTime);
+        currentTimeText.text = StringTime.SecondToTimeString(raceResultTime.CurrentTime);
     }
 }

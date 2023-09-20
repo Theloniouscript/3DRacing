@@ -26,6 +26,9 @@ public class RaceResultTime : MonoBehaviour, IDependency<RaceTimeTracker>, IDepe
 
     public bool RecordWasSet => playerRecordTime != 0; // рекорд был установлен
 
+    private float record;
+    public float Record => record;
+    
     public static string SaveMark = "_player_best_time";
 
     private void Awake()
@@ -43,9 +46,9 @@ public class RaceResultTime : MonoBehaviour, IDependency<RaceTimeTracker>, IDepe
     }
     private void OnRaceCompleted()
     {
-       float absoluteRecord = GetAbsoluteRecord();
+       record = GetAbsoluteRecord();
 
-       if(raceTimeTracker.CurrentTime < absoluteRecord || playerRecordTime == 0)
+       if(raceTimeTracker.CurrentTime < record || playerRecordTime == 0)
         {
             playerRecordTime = raceTimeTracker.CurrentTime;
             Save();
@@ -59,10 +62,13 @@ public class RaceResultTime : MonoBehaviour, IDependency<RaceTimeTracker>, IDepe
     public float GetAbsoluteRecord() // если побили gold или свой же рекорд
     {
         if (playerRecordTime < goldTime && playerRecordTime != 0)
+        {
             return playerRecordTime;
-        
+        }             
         else
+        {
             return goldTime;
+        }
     }
 
     private void Load()

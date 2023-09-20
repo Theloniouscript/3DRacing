@@ -42,11 +42,13 @@ public class CarRespawner : MonoBehaviour, IDependency<Car>, IDependency<RaceSta
 
     public void Respawn()
     {
-        if (respawnTrackPoint = null) return;
+        if (null == respawnTrackPoint) return;
         if (raceStateTracker.State != RaceState.Race) return;
 
         car.Respawn(respawnTrackPoint.transform.position + respawnTrackPoint.transform.up * respawnHeight, 
                     respawnTrackPoint.transform.rotation);
+
+       
         carControl.Reset();
     }
 }
