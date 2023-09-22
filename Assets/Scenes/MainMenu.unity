@@ -721,6 +721,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2618062960235800407, guid: e674a69cea4019c4dacf2fc5ff48133b, type: 3}
+      propertyPath: setting
+      value: 
+      objectReference: {fileID: 11400000, guid: 410d0856803c17241a880db85ff6d2d1, type: 2}
+    - target: {fileID: 2618062961244315072, guid: e674a69cea4019c4dacf2fc5ff48133b, type: 3}
+      propertyPath: setting
+      value: 
+      objectReference: {fileID: 11400000, guid: 588eb35343d03da46886813a83128a42, type: 2}
     - target: {fileID: 4302306368494649132, guid: e674a69cea4019c4dacf2fc5ff48133b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 1665
