@@ -13,7 +13,7 @@ public class ResolutionSetting : Setting // не будет видно в ред
         new Vector2Int(1920, 1080),
     };
 
-    private int currentResolutionIndex = 0;
+     private int currentResolutionIndex = 0;
 
     public override bool IsMinValue { get => currentResolutionIndex == 0; }
     public override bool IsMaxValue { get => currentResolutionIndex == availableResolution.Length - 1; }
@@ -47,5 +47,17 @@ public class ResolutionSetting : Setting // не будет видно в ред
     public override void Apply() // по сути весь класс - обертка для этой строчки:
     {
         Screen.SetResolution(availableResolution[currentResolutionIndex].x, availableResolution[currentResolutionIndex].y, true);
+        Save();
     }
+
+    public override void Load()
+    {
+        currentResolutionIndex = PlayerPrefs.GetInt(title, 0);
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetInt(title, currentResolutionIndex);
+    }
+
 }

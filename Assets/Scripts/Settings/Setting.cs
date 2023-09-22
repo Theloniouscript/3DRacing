@@ -37,6 +37,7 @@ public abstract class Setting : ScriptableObject // чтобы класс кно
     public virtual string GetStringValue() { return string.Empty; } // возвращает строку
 
     public virtual void Apply() { }
+    public virtual void Load() { } // нужно переписать для каждой из настроек
 
 
 }

@@ -51,6 +51,17 @@ public class AudioMixerFloatSetting : Setting
     public override void Apply()
     {
         audioMixer.SetFloat(nameParameter, currentValue);
+        Save();
+    }
+
+    public override void Load()
+    {
+        currentValue = PlayerPrefs.GetFloat(title, 0);
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetFloat(title, currentValue);
     }
 
 }
