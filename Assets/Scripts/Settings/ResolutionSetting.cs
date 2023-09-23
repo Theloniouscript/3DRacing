@@ -52,7 +52,7 @@ public class ResolutionSetting : Setting // не будет видно в ред
 
     public override void Load()
     {
-        currentResolutionIndex = PlayerPrefs.GetInt(title, 0);
+        currentResolutionIndex = PlayerPrefs.GetInt(title, availableResolution.Length - 1);
     }
 
     private void Save()
