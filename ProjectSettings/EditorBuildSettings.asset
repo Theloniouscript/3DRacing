@@ -11,4 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/test_race.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/track_01.unity
+    guid: f20ebd64f8e267e48af1e6eb76863192
+  - enabled: 1
+    path: Assets/Scenes/track_02.unity
+    guid: 5004fe1d0657502408615cab429b0978
+  - enabled: 1
+    path: Assets/Scenes/track_03.unity
+    guid: 25fec9b6551fd86468d140af6fa8a315
+  - enabled: 1
+    path: Assets/Scenes/track_04.unity
+    guid: 680e9f0ba78153f4dabc46c64b45a806
+  - enabled: 1
+    path: Assets/Scenes/track_05.unity
+    guid: d8b5bafc1a0d78148a30dba24a5245ec
   m_configObjects: {}

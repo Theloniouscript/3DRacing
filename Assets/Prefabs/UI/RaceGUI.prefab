@@ -267,7 +267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.316, y: 0.2312963}
   m_AnchorMax: {x: 0.6973333, y: 0.7907038}
-  m_AnchoredPosition: {x: -0.86676025, y: -1.2199707}
+  m_AnchoredPosition: {x: -587, y: 214}
   m_SizeDelta: {x: 562.0264, y: 444.21948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &527415220
@@ -2985,11 +2985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldRecordObject: {fileID: 3540938835013804466}
   playerRecordObject: {fileID: 3540938835277480361}
-  finalRecordObject: {fileID: 3540938834860540488}
   goldRecordTime: {fileID: 3540938836219732144}
   playerRecordTime: {fileID: 3540938836535674257}
-  recordTimeText: {fileID: 3540938835111762866}
-  currentTimeText: {fileID: 3540938834745487233}
 --- !u!1 &3540938835587795974
 GameObject:
   m_ObjectHideFlags: 0
